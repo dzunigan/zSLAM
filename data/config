@@ -1,0 +1,24 @@
+; Copyright (c) 2016, D. Zúñiga Noël
+;
+; Config Parameters
+; ----------------------------------------------------------------------
+
+[GENERAL]
+max_k = 300
+skip = 2
+
+[DIFODO]
+downsample = 4
+ctf_levels = 5
+
+[FEATURES]
+th = 10
+pattern = ./data/brief_pattern.yml
+
+[LOOP_DETECTION]
+vocabulary = ./data/brief_k10L6.voc.gz
+f = 2
+alpha = 0.3
+
+[KEYFRAME_SELECTION]
+beta = 0.8

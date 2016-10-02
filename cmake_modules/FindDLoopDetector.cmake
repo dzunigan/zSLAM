@@ -1,0 +1,3 @@
+GET_FILENAME_COMPONENT(DLoopDetector_INCLUDE_DIR "../DLoopDetector/include" ABSOLUTE)
+
+SET(DLoopDetector_INCLUDE_DIRS ${DLoopDetector_INCLUDE_DIR})
