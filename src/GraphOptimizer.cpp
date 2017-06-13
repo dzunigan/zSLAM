@@ -7,6 +7,8 @@
 
 #include "GraphOptimizer.h"
 
+#include <iostream>
+
 GraphOptimizer::GraphOptimizer(bool verbose)
 {
     optimizer.setVerbose(verbose);
@@ -72,6 +74,10 @@ void GraphOptimizer::addLoop(const int fromId, const int toId, const g2o::Isomet
     e_se3->setVertex(0, v_src);
     e_se3->setVertex(1, v_tgt);
     e_se3->setMeasurement(rel_pose);
+
+    std::cout << "Transf:" << std::endl;
+    std::cout << rel_pose.translation().transpose() << std::endl;
+    getchar();
 
     //Set the information matrix to identity
     e_se3->setInformation(Eigen::Matrix6d::Identity());

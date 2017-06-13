@@ -4,7 +4,6 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -mtune=native -march=native")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 
 GET_FILENAME_COMPONENT(MRPT_PATHS "../MRPT/build" ABSOLUTE)
 GET_FILENAME_COMPONENT(PCL_PATHS "../PCL/build" ABSOLUTE)
@@ -30,8 +29,8 @@ INCLUDE_DIRECTORIES(include ${PCL_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS} ${DBoW2_I
 LINK_DIRECTORIES(${PCL_LIBRARY_DIRS})
 ADD_DEFINITIONS(${PCL_DEFINITIONS})
 
-SET(HEADER_FILES include/Dataset.h include/Difodo.h include/GraphOptimizer.h include/RANSAC_3D.h include/TemplatedKeyframeSelection.h include/TemplatedLoopDetector3D.h include/util.h)
-SET(SRC_FILES src/Dataset.cpp src/Difodo.cpp src/GraphOptimizer.cpp)
+SET(HEADER_FILES include/config.h include/Difodo.h include/GraphOptimizer.h include/Input.h include/RANSAC_3D.h include/Shared.h include/TemplatedKeyframeSelection.h include/TemplatedLoopDetector3D.h include/util.h)
+SET(SRC_FILES src/Difodo.cpp src/GraphOptimizer.cpp src/Input.cpp)
 
 SET(G2O_LIBRARIES ${G2O_CLI_LIBRARY} ${G2O_CORE_LIBRARY} ${G2O_SOLVER_CHOLMOD} ${G2O_SOLVER_CSPARSE} ${G2O_SOLVER_CSPARSE_EXTENSION} ${G2O_SOLVER_DENSE} ${G2O_SOLVER_EIGEN} ${G2O_SOLVER_PCG} ${G2O_SOLVER_SLAM2D_LINEAR} ${G2O_SOLVER_STRUCTURE_ONLY} ${G2O_STUFF_LIBRARY} ${G2O_TYPES_DATA} ${G2O_TYPES_ICP} ${G2O_TYPES_SBA} ${G2O_TYPES_SCLAM2D} ${G2O_TYPES_SIM3} ${G2O_TYPES_SLAM2D} ${G2O_TYPES_SLAM3D})
 
